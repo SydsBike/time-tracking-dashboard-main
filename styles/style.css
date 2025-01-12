@@ -1,0 +1,333 @@
+/* import font */
+
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+:root {
+  /* custom typography */
+
+  --ff-primary: "Rubik", serif;
+
+  --fs-primary: 0.9375rem;
+  --fs-button: 1.125rem;
+  --fs-fluid-h1-24-40: clamp(1.5rem, 1.1479rem + 1.5023vw, 2.5rem);
+  --fs-fluid-card-32-56: clamp(2rem, 1.4718rem + 2.2535vw, 3.5rem);
+
+  --fw-light: 300;
+  --fw-normal: 400;
+  --fw-bold: 500;
+
+  /* custom colors */
+
+  --clr-primary-bg: hsl(226, 45%, 10%);
+  --clr-primary-bg-card: hsl(236, 45%, 20%);
+  --clr-header-blue: hsl(246, 80%, 60%);
+  --clr-primary-white: hsl(0, 0%, 100%);
+
+  --clr-font-primary: hsl(236, 100%, 87%);
+  --clr-font-not-active: hsl(235, 45%, 62%);
+
+  --clr-accent-work: hsl(15, 100%, 70%);
+  --clr-accent-play: hsl(195, 74%, 62%);
+  --clr-accent-study: hsl(348, 100%, 68%);
+  --clr-accent-exercise: hsl(145, 58%, 55%);
+  --clr-accent-social: hsl(264, 64%, 52%);
+  --clr-accent-self-care: hsl(43, 84%, 65%);
+
+  /* sizeing */
+  --img-fluid-avatar-64-78: clamp(4rem, 3.6919rem + 1.3146vw, 4.875rem);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+
+html,
+body {
+  height: 100%;
+  line-height: 1.1;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* utility classes */
+
+.fs-h1 {
+  font-size: var(--fs-fluid-h1-24-40);
+}
+
+.fs-h2 {
+  font-size: 1.125rem;
+}
+
+.fs-current {
+  font-size: var(--fs-fluid-card-32-56);
+}
+
+.fw-light {
+  font-weight: var(--fw-light);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+.fc-white {
+  color: var(--clr-primary-white);
+}
+
+.txt-right {
+  margin-left: auto;
+}
+
+.img-container-work {
+  background-color: var(--clr-accent-work);
+}
+.img-container-play {
+  background-color: var(--clr-accent-play);
+}
+.img-container-study {
+  background-color: var(--clr-accent-study);
+}
+.img-container-exercise {
+  background-color: var(--clr-accent-exercise);
+}
+.img-container-social {
+  background-color: var(--clr-accent-social);
+}
+.img-container-self-care {
+  background-color: var(--clr-accent-self-care);
+}
+
+.btn {
+  all: unset;
+  font-size: var(--fs-button);
+  font-weight: var(--fw-normal);
+  color: var(--clr-font-not-active);
+  cursor: pointer;
+}
+
+.selected {
+  color: var(--clr-primary-white);
+}
+
+/* general styling */
+
+body {
+  font-size: var(--fs-primary);
+  font-family: var(--ff-primary);
+  color: var(--clr-font-primary);
+  font-weight: var(--fw-normal);
+  background-color: var(--clr-primary-bg);
+}
+
+.app-container {
+  display: grid;
+  gap: 1.5rem;
+  margin: 1.5rem;
+}
+
+.header-title {
+  position: relative;
+  background-color: var(--clr-header-blue);
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  align-items: center;
+  padding: 2.125rem 2rem;
+  border-radius: 0.9375rem;
+  z-index: 1;
+}
+.jer {
+  height: var(--img-fluid-avatar-64-78);
+  width: var(--img-fluid-avatar-64-78);
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+.header-nav {
+  background-color: var(--clr-primary-bg-card);
+  border-radius: 0 0 0.9375rem 0.9375rem;
+  position: relative;
+}
+
+.header-nav::before {
+  content: "";
+  background-color: var(--clr-primary-bg-card);
+  position: absolute;
+  inset: -10px 0px 100% 0px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  padding-block: 2rem;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card {
+  background-color: var(--clr-primary-bg-card);
+  border-radius: 0.9375rem;
+  position: relative;
+  margin-top: 2rem;
+}
+
+.img-wrapper {
+  position: absolute;
+  inset: -32px 0 95% 0;
+  border-radius: 0.9375rem 0.9375rem 0 0;
+}
+
+.image {
+  margin-right: 17.42px;
+  margin-left: auto;
+}
+
+.card-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 24px 28px;
+  gap: 6px;
+  align-items: baseline;
+  border-radius: 0.9375rem;
+
+  background-color: var(--clr-primary-bg-card);
+  position: relative;
+}
+
+.title,
+.current {
+  justify-self: start;
+}
+
+.dots,
+.previous {
+  justify-self: end;
+  text-wrap: nowrap;
+}
+
+.dots {
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 67.5em) {
+  body {
+    display: grid;
+    align-content: center;
+    justify-items: center;
+  }
+  .app-container {
+    grid-template-columns: repeat(4, 255px);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "header work play study"
+      "header exercise social self-care";
+
+    justify-items: center;
+    gap: 30px;
+  }
+
+  .header {
+    grid-area: header;
+  }
+
+  .header-title {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 80px;
+    gap: 43px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 21px;
+    margin-left: 2rem;
+  }
+  .title {
+    padding-bottom: 1.5rem;
+  }
+
+  .current {
+    padding-bottom: 0.5rem;
+  }
+
+  .previous {
+    justify-self: start;
+  }
+}
