@@ -2,6 +2,16 @@
 
 const { useState, useEffect } = React;
 const urlToFetch = "./data.json";
+const images = {
+  ellipsis: "./images/icon-ellipsis.svg",
+  exercise: "./images/icon-exercise.svg",
+  play: "./images/icon-play.svg",
+  "self-care": "./images/icon-self-care.svg",
+  social: "./images/icon-social.svg",
+  study: "./images/icon-study.svg",
+  work: "./images/icon-work.svg",
+  avatar: "./images/image-jeremy.png",
+};
 const AppData = React.createContext();
 
 function App() {
@@ -39,7 +49,7 @@ function App() {
   }
 
   return (
-    <AppData.Provider value={{ timeframe, handleClick }}>
+    <AppData.Provider value={{ timeframe, handleClick, images }}>
       <main className="main-container">
         <Layout fetchData={fetchData} />
       </main>

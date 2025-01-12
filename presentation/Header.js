@@ -1,11 +1,11 @@
 const { useContext } = React;
 
 function Header() {
-  const { timeframe, handleClick } = useContext(AppData);
+  const { timeframe, handleClick, images } = useContext(AppData);
   return (
     <header className="header">
       <div className="header-title">
-        <img className="jer" src="../images/image-jeremy.png" />
+        <img className="jer" src={images.avatar} />
         <div>
           <p>Report for</p>
           <h1 className="fs-h1 fw-light fc-white">Jeremy Robson</h1>
